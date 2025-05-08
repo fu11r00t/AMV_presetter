@@ -1,4 +1,5 @@
 #include "include/gui/mainwindow.h"
+#include "include/gui/widgets/videomeasurementwidget.h"
 #include <QFileDialog>
 #include <QImage>
 #include <QPixmap>
@@ -10,13 +11,17 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("AMV Presetter");
     resize(1200, 800);
 
-    // Главный виджет и layout
+    // Создание виджетов
+    videoWidget = new VideoMeasurementWidget;
+
+    // Основная компоновка
     QWidget *centralWidget = new QWidget(this);
     QHBoxLayout *mainLayout = new QHBoxLayout(centralWidget);
 
-    // --- Колонка 1: Измерение ---
-    QFrame *measurementColumn = new QFrame;
-    QVBoxLayout *measurementLayout = new QVBoxLayout(measurementColumn);
+    // Левая колонка
+    QVBoxLayout* leftColumn = new QVBoxLayout;
+    leftColumn->addWidget(videoWidget);
+/*    QVBoxLayout *measurementLayout = new QVBoxLayout(leftColumn);
 
     // Горизонтальный контейнер для изображения и вертикального слайдера
     QHBoxLayout *imageAndFocusLayout = new QHBoxLayout;
@@ -88,7 +93,8 @@ MainWindow::MainWindow(QWidget *parent)
     // Добавляем GroupBox в основной layout
     measurementLayout->addWidget(coordsGroup);
 
-    mainLayout->addWidget(measurementColumn);
+    mainLayout->addWidget(measurementColumn);*/
+    mainLayout->addLayout(leftColumn);
 
     // --- Колонка 2: Предустановки ---
     QFrame *presetsColumn = new QFrame;

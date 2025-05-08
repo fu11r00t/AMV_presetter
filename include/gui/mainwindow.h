@@ -18,6 +18,7 @@
 #include <opencv2/opencv.hpp>
 //#include "videoprocessor.h"
 
+#include <include/gui/widgets/videomeasurementwidget.h>
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -33,6 +34,7 @@ private:
     QLCDNumber *zCoordLCD;
     QLCDNumber *xCoordLCD;
     QLCDNumber *cCoordLCD;
+    VideoMeasurementWidget* videoWidget;
 
     // Колонка 2: Предустановки
     QComboBox *toolComboBox;

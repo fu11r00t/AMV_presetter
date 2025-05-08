@@ -9,16 +9,18 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/gui/widgets/videomeasurementwidget.cpp \
     src/main.cpp \
     src/gui/mainwindow.cpp
 
-#RESOURCES += \
-#    resources/styles.qrc
+RESOURCES += \
+    resources/styles.qrc
 
 HEADERS += \
 #    include/gui/widgets/*.h \
 #    include/gui/dialogs/*.h \
-    include/gui/mainwindow.h
+    include/gui/mainwindow.h \
+    include/gui/widgets/videomeasurementwidget.h
 #    include/data/*.h \
 #    include/core/*.h
 
