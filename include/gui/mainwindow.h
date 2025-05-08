@@ -1,0 +1,62 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include <QLabel>
+#include <QSlider>
+#include <QLCDNumber>
+#include <QComboBox>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QTabWidget>
+#include <QTableWidget>
+#include <QGroupBox>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QFormLayout>
+
+#include <opencv2/opencv.hpp>
+//#include "videoprocessor.h"
+
+
+class MainWindow : public QMainWindow {
+    Q_OBJECT
+
+public:
+    MainWindow(QWidget *parent = nullptr);
+
+private:
+    // Колонка 1: Измерение
+    QLabel *imageLabel;
+    QSlider *contrastSlider;
+    QSlider *focusSlider;
+    QLCDNumber *zCoordLCD;
+    QLCDNumber *xCoordLCD;
+    QLCDNumber *cCoordLCD;
+
+    // Колонка 2: Предустановки
+    QComboBox *toolComboBox;
+    QLineEdit *idLineEdit;
+    QLineEdit *invLineEdit;
+    QLineEdit *descriptionLineEdit;
+    QLineEdit *drawingFileLineEdit;
+    QPushButton *browseDrawingButton;
+
+    QLineEdit *pitchLineEdit;
+    QLineEdit *focusLineEdit;
+    QLineEdit *measureRangeLineEdit;
+    QLineEdit *edgeShapeLineEdit;
+    QLineEdit *zLineEdit;
+    QLineEdit *xLineEdit;
+    QLineEdit *nominalRadiusLineEdit;
+    QLineEdit *angle1LineEdit;
+    QLineEdit *angle2LineEdit;
+
+    // Колонка 3: Вкладки
+    QTabWidget *tabWidget;
+    QTableWidget *toolParamsTable;
+    QTableWidget *partsListTable;
+    QTableWidget *commentsTable;
+};
+
+#endif // MAINWINDOW_H
