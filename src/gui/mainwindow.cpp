@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Создание виджетов
     videoWidget = new VideoMeasurementWidget;
+    coordsPanel=new CoordinatesPanel;
 
     // Основная компоновка
     QWidget *centralWidget = new QWidget(this);
@@ -22,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Левая колонка
     QVBoxLayout* leftColumn = new QVBoxLayout;
     leftColumn->addWidget(videoWidget);
-//    leftColumn->addWidget(coordsPanel);
+    leftColumn->addWidget(coordsPanel);
 
     mainLayout->addLayout(leftColumn);
 

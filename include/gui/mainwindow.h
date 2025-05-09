@@ -29,12 +29,6 @@ public:
 
 private:
     // Колонка 1: Измерение
-    QLabel *imageLabel;
-    QSlider *contrastSlider;
-    QSlider *focusSlider;
-    QLCDNumber *zCoordLCD;
-    QLCDNumber *xCoordLCD;
-    QLCDNumber *cCoordLCD;
     VideoMeasurementWidget* videoWidget;
     CoordinatesPanel* coordsPanel;
 

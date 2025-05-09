@@ -11,8 +11,8 @@ public:
 
     QLCDNumber* zCoordLCD;
     QLCDNumber* xCoordLCD;
-    QLCDNumber* cCoordLCD;
+    QLCDNumber* yCoordLCD;
 
-    void updateCoordinates(double z, double x, double c);
+    void updateCoordinates(double z, double x, double y);
 };
 #endif // COORDINATESPANEL_H
