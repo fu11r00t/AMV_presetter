@@ -22,6 +22,7 @@ VideoMeasurementWidget::VideoMeasurementWidget(QWidget* parent)
 
     // Слайдеры
     contrastSlider = new QSlider(Qt::Horizontal);
+    contrastSlider->setFixedWidth(400);
     focusSlider = new QSlider(Qt::Vertical);
     focusSlider->setFixedHeight(400);
 

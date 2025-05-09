@@ -19,6 +19,7 @@
 //#include "videoprocessor.h"
 
 #include <include/gui/widgets/videomeasurementwidget.h>
+#include <include/gui/widgets/coordinatespanel.h>
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -35,6 +36,7 @@ private:
     QLCDNumber *xCoordLCD;
     QLCDNumber *cCoordLCD;
     VideoMeasurementWidget* videoWidget;
+    CoordinatesPanel* coordsPanel;
 
     // Колонка 2: Предустановки
     QComboBox *toolComboBox;

@@ -1,5 +1,6 @@
 #include "include/gui/mainwindow.h"
 #include "include/gui/widgets/videomeasurementwidget.h"
+#include "include/gui/widgets/coordinatespanel.h"
 #include <QFileDialog>
 #include <QImage>
 #include <QPixmap>
@@ -21,79 +22,8 @@ MainWindow::MainWindow(QWidget *parent)
     // Левая колонка
     QVBoxLayout* leftColumn = new QVBoxLayout;
     leftColumn->addWidget(videoWidget);
-/*    QVBoxLayout *measurementLayout = new QVBoxLayout(leftColumn);
+//    leftColumn->addWidget(coordsPanel);
 
-    // Горизонтальный контейнер для изображения и вертикального слайдера
-    QHBoxLayout *imageAndFocusLayout = new QHBoxLayout;
-
-    // Изображение с камеры (заглушка)
-    imageLabel = new QLabel;
-    imageLabel->setFixedSize(400, 400);
-    imageLabel->setStyleSheet("background-color: black; border: 2px solid gray;");
-    QImage image("scan.png");
-    if(image.isNull())
-    {
-        qDebug()<<"Failed to load image!";
-        return;
-    }
-    QPixmap pixmap = QPixmap::fromImage(image);
-    imageLabel->setPixmap(pixmap);
-    imageLabel->setScaledContents(true);
-    imageAndFocusLayout->addWidget(imageLabel);
-
-    // Вертикальный слайдер (Фокус) справа от изображения
-    focusSlider = new QSlider(Qt::Vertical);
-    focusSlider->setFixedHeight(400); // Высота как у изображения
-    imageAndFocusLayout->addWidget(focusSlider);
-
-    measurementLayout->addLayout(imageAndFocusLayout);
-
-    // Горизонтальный слайдер (Контраст) под изображением
-    contrastSlider = new QSlider(Qt::Horizontal);
-    measurementLayout->addWidget(contrastSlider);
-
-    // --- Координаты ---
-    QGroupBox *coordsGroup = new QGroupBox("Координаты");
-    QFormLayout *coordsForm = new QFormLayout(coordsGroup);
-
-    // Настройка стилей и размеров
-    QFont labelFont("Arial", 16, QFont::Bold);
-    QFont lcdFont("Arial", 20);
-
-    // Z координата
-    QLabel *zLabel = new QLabel("Z:");
-    zLabel->setFont(labelFont);
-    zCoordLCD = new QLCDNumber(6);
-    zCoordLCD->setSegmentStyle(QLCDNumber::Flat);
-    zCoordLCD->setStyleSheet("QLCDNumber { background: black; color: lime; }");
-    zCoordLCD->setFont(lcdFont);
-    zCoordLCD->setSmallDecimalPoint(true);
-    coordsForm->addRow(zLabel, zCoordLCD);  // Добавляем в форму
-
-    // X координата
-    QLabel *xLabel = new QLabel("X:");
-    xLabel->setFont(labelFont);
-    xCoordLCD = new QLCDNumber(6);
-    xCoordLCD->setSegmentStyle(QLCDNumber::Flat);
-    xCoordLCD->setStyleSheet("QLCDNumber { background: black; color: lime; }");
-    xCoordLCD->setFont(lcdFont);
-    xCoordLCD->setSmallDecimalPoint(true);
-    coordsForm->addRow(xLabel, xCoordLCD);
-
-    // C координата
-    QLabel *cLabel = new QLabel("C:");
-    cLabel->setFont(labelFont);
-    cCoordLCD = new QLCDNumber(6);
-    cCoordLCD->setSegmentStyle(QLCDNumber::Flat);
-    cCoordLCD->setStyleSheet("QLCDNumber { background: black; color: lime; }");
-    cCoordLCD->setFont(lcdFont);
-    cCoordLCD->setSmallDecimalPoint(true);
-    coordsForm->addRow(cLabel, cCoordLCD);
-
-    // Добавляем GroupBox в основной layout
-    measurementLayout->addWidget(coordsGroup);
-
-    mainLayout->addWidget(measurementColumn);*/
     mainLayout->addLayout(leftColumn);
 
     // --- Колонка 2: Предустановки ---
