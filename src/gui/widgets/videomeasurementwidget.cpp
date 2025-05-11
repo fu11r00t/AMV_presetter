@@ -15,6 +15,7 @@ VideoMeasurementWidget::VideoMeasurementWidget(QWidget* parent)
         qDebug()<<"Failed to load image!";
         return;
     }
+
     QPixmap pixmap = QPixmap::fromImage(image);
     imageLabel->setPixmap(pixmap);
     imageLabel->setScaledContents(true);
