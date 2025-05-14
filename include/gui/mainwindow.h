@@ -20,7 +20,7 @@
 
 #include <include/gui/widgets/videomeasurementwidget.h>
 #include <include/gui/widgets/coordinatespanel.h>
-
+#include <include/gui/widgets/toolpresetspanel.h>
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
@@ -33,22 +33,8 @@ private:
     CoordinatesPanel* coordsPanel;
 
     // Колонка 2: Предустановки
-    QComboBox *toolComboBox;
-    QLineEdit *idLineEdit;
-    QLineEdit *invLineEdit;
-    QLineEdit *descriptionLineEdit;
-    QLineEdit *drawingFileLineEdit;
-    QPushButton *browseDrawingButton;
+    ToolPresetsPanel* presetsPanel;
 
-    QLineEdit *pitchLineEdit;
-    QLineEdit *focusLineEdit;
-    QLineEdit *measureRangeLineEdit;
-    QLineEdit *edgeShapeLineEdit;
-    QLineEdit *zLineEdit;
-    QLineEdit *xLineEdit;
-    QLineEdit *nominalRadiusLineEdit;
-    QLineEdit *angle1LineEdit;
-    QLineEdit *angle2LineEdit;
 
     // Колонка 3: Вкладки
     QTabWidget *tabWidget;
