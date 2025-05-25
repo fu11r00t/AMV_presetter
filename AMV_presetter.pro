@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     src/gui/widgets/coordinatespanel.cpp \
+    src/gui/widgets/resultstabwidget.cpp \
     src/gui/widgets/toolpresetspanel.cpp \
     src/gui/widgets/videomeasurementwidget.cpp \
     src/main.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
 #    include/gui/dialogs/*.h \
     include/gui/mainwindow.h \
     include/gui/widgets/coordinatespanel.h \
+    include/gui/widgets/resultstabwidget.h \
     include/gui/widgets/toolpresetspanel.h \
     include/gui/widgets/videomeasurementwidget.h
 #    include/data/*.h \
