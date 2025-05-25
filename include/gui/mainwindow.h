@@ -21,6 +21,8 @@
 #include <include/gui/widgets/videomeasurementwidget.h>
 #include <include/gui/widgets/coordinatespanel.h>
 #include <include/gui/widgets/toolpresetspanel.h>
+#include <include/gui/widgets/resultstabwidget.h>
+
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
@@ -37,10 +39,8 @@ private:
 
 
     // Колонка 3: Вкладки
-    QTabWidget *tabWidget;
-    QTableWidget *toolParamsTable;
-    QTableWidget *partsListTable;
-    QTableWidget *commentsTable;
+    ResultsTabWidget* resultsTabWidget;
+
 };
 
 #endif // MAINWINDOW_H

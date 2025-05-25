@@ -31,7 +31,8 @@ VideoMeasurementWidget::VideoMeasurementWidget(QWidget* parent)
     QHBoxLayout* hLayout = new QHBoxLayout;
     hLayout->addWidget(imageLabel);
     hLayout->addWidget(focusSlider);
-
+    hLayout->addStretch();
     layout->addLayout(hLayout);
     layout->addWidget(contrastSlider);
+    layout->addStretch();
 }

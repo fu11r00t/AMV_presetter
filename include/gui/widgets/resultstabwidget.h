@@ -7,9 +7,11 @@ class ResultsTabWidget : public QTabWidget{
     Q_OBJECT
 public:
     explicit ResultsTabWidget(QWidget* parent = nullptr);
-    QTableWidget* toolsParamsTable;
+    QTabWidget* tabWidget;
+    QTableWidget* toolParamsTable;
     QTableWidget* partListTable;
     QTableWidget* commentsTable;
+
 };
 
 #endif // RESULTSTABWIDGET_H

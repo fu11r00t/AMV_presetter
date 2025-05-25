@@ -15,8 +15,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Создание виджетов
     videoWidget = new VideoMeasurementWidget;
-    coordsPanel=new CoordinatesPanel;
+    coordsPanel = new CoordinatesPanel;
     presetsPanel = new ToolPresetsPanel;
+    resultsTabWidget = new ResultsTabWidget;
 
     // Основная компоновка
     QWidget *centralWidget = new QWidget(this);
@@ -36,19 +37,10 @@ MainWindow::MainWindow(QWidget *parent)
     mainLayout->addLayout(presetsColumn);
 
     // --- Колонка 3: Вкладки ---
-    tabWidget = new QTabWidget;
-    toolParamsTable = new QTableWidget(10, 2);
-    toolParamsTable->setHorizontalHeaderLabels({"Параметр", "Значение"});
-    partsListTable = new QTableWidget(10, 3);
-    partsListTable->setHorizontalHeaderLabels({"Деталь", "ID", "Статус"});
-    commentsTable = new QTableWidget(10, 1);
-    commentsTable->setHorizontalHeaderLabels({"Комментарий"});
+    QVBoxLayout* resultsColumn = new QVBoxLayout;
+    resultsColumn->addWidget(resultsTabWidget);
 
-    tabWidget->addTab(toolParamsTable, "Параметры инструмента");
-    tabWidget->addTab(partsListTable, "Список деталей");
-    tabWidget->addTab(commentsTable, "Комментарии");
-
-    mainLayout->addWidget(tabWidget);
+    mainLayout->addLayout(resultsColumn);
 
     centralWidget->setLayout(mainLayout);
     setCentralWidget(centralWidget);
